@@ -1,0 +1,132 @@
+/* pricing.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#pricing-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.pricing-plan {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 30%;
+    transition: transform 0.3s ease;
+}
+
+.pricing-plan:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-plan h2 {
+    margin-top: 0;
+}
+
+.pricing-plan h3 {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.pricing-plan h3 span {
+    font-size: 0.5em;
+    color: #666;
+}
+
+.pricing-plan button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-plan button:hover {
+    background-color: #0056b3;
+}
+
+.pricing-plan ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.pricing-plan ul li {
+    padding: 5px 0;
+}
+
+/* Marquee */
+#logo-marquee {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    position: relative;
+}
+
+.marquee {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 90s linear infinite;
+    position: relative;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); } /* Make the distance shorter */
+}
+
+.marquee-content img {
+    height: 40px;
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.marquee-content img:hover {
+    transform: scale(1.2);
+}
+
+/* Fading effect */
+#logo-marquee::before, #logo-marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 2;
+}
+
+#logo-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, #f8f9fa, transparent);
+}
+
+#logo-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, #f8f9fa, transparent);
+}

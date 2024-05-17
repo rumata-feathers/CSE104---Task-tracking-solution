@@ -1,16 +1,59 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  fdhfdjjafd
-  <script src="script.js"></script>
-</body>
+    <div id="topbar">
+        <div class="topbar-title">Task Manager</div>
+        <div class="toolbar">
+            <button onclick="toggleArchivedTasks()">View Archived Tasks</button>
+            <button onclick="toggleEditToolbar()">Edit</button>
+            <button onclick="toggleTheme()">Change Theme</button>
+            <button onclick="window.location.href='pricing.html'">Pricing</button>
+        </div>
+    </div>
 
+    <div id="task-columns">
+        <div class="task-column" id="no-status">
+            <h2>No Status</h2>
+            <button class="add-task-btn" onclick="addNewTask('no-status')">+ Add new task</button>
+        </div>
+        <div class="task-column" id="next-up">
+            <h2>Next Up</h2>
+            <button class="add-task-btn" onclick="addNewTask('next-up')">+ Add new task</button>
+        </div>
+        <div class="task-column" id="in-progress">
+            <h2>In Progress</h2>
+            <button class="add-task-btn" onclick="addNewTask('in-progress')">+ Add new task</button>
+        </div>
+        <div class="task-column" id="completed">
+            <h2>Completed</h2>
+            <button class="add-task-btn" onclick="addNewTask('completed')">+ Add new task</button>
+        </div>
+    </div>
+
+    <div id="binder">
+        © Web Project for CSE104 at École Polytechnique, France. Made by Georgii Kuznetsov and Georgy Salakhutdinov
+    </div>
+
+    <!-- Sidebar for Archived Tasks -->
+    <div id="archived-tasks-sidebar" class="sidebar">
+        <h3>Archived Tasks</h3>
+        <div id="archived-tasks-list">
+            <!-- Archived tasks will be populated here -->
+        </div>
+    </div>
+
+    <!-- Edit Toolbar -->
+    <div id="edit-toolbar" class="edit-toolbar">
+        <h3>Edit Toolbar</h3>
+        <button onclick="addNewTask()">Add New Task</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
