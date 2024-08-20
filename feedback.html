@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="feedback.css">
+</head>
+
+<body>
+    <div id="topbar">
+        <button class="topbar-title" onclick="window.location.href='index.html'">Task Manager</button>
+        <div class="toolbar">
+            <button class="topbar-button theme-toggle-btn">Change Theme</button>
+            <button class="topbar-button" onclick="window.location.href='pricing.html'">Pricing</button>
+            <button class="topbar-button" onclick="window.location.href='feedback.html'">Feedback</button>
+        </div>
+    </div>
+
+    <button class="go-back-btn" onclick="window.location.href='index.html'">
+        <img src="logos/Back icon.svg" alt="Go Back" />
+    </button>
+
+    <div class="feedback-container">
+        <h1>Trusted by Task Management Enthusiasts</h1>
+        <div class="feedback-slider">
+            <div class="feedback-wrapper" id="feedbackWrapper">
+            </div>
+        </div>
+    </div>
+    <div class="contact-container">
+        <h2>Willing to provide feedback or anything else?</h2>
+        <p>Feel free to reach out below!</p>
+        <button><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Contact Us</a></button>
+    </div>
+    <script src="feedback.js"></script>
+</body>
+
+</html>

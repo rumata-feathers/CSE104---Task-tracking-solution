@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing Plans</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="pricing.css">
 </head>
+
 <body>
+    <div id="topbar">
+        <button class="topbar-title" onclick="window.location.href='index.html'">Task Manager</button>
+        <div class="toolbar">
+            <button class="topbar-button theme-toggle-btn">Change Theme</button>
+            <button class="topbar-button" onclick="window.location.href='pricing.html'">Pricing</button>
+            <button class="topbar-button" onclick="window.location.href='feedback.html'">Feedback</button>
+        </div>
+    </div>
+
+    <button class="go-back-btn" onclick="window.location.href='index.html'">
+        <img src="logos/Back icon.svg" alt="Go Back" />
+    </button>
+
     <div id="pricing-container">
         <div class="pricing-plan">
             <h2>Basic</h2>
@@ -50,10 +66,10 @@
     <div id="logo-marquee">
         <div class="marquee">
             <div class="marquee-content">
-                <!-- Logos will be inserted here dynamically -->
             </div>
         </div>
     </div>
     <script src="pricing.js"></script>
 </body>
+
 </html>

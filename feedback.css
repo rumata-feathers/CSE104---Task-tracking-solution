@@ -18,9 +18,9 @@
     --in-progress-color: #dddbff;
     --completed-color: #F6F4FE;
 
-    --primary-color: #2f27ce;
-    --secondary-color: #dddbff;
-    --accent-color: #443dff;
+    --primary-color: #dddbff;
+    --secondary-color: #aca1d9;
+    --accent-color: #4A00CA;
     --dark-color: #040316;
 
     --pricing-plan-bg-color: #dddbff;
@@ -47,31 +47,29 @@
     --in-progress-color: #443dff;
     --completed-color: #dddbff;
 
-    --primary-color: #3a31d8;
-    --secondary-color: #020024;
+    --primary-color: #aca1d9;
+    --secondary-color: #3a31d8;
     --accent-color: #0600c2;
-    --dark-color: #010104;
-    
+    --dark-color: #aca1d9;
+
     --pricing-plan-bg-color: #11012E;
     --pricing-plan-accent-color: #2f27ce;
 
-    --pricing-plan-shadow-color: #0600c2;
+    --pricing-plan-shadow-color: #11012E;
 }
-/* General body styles */
 body {
     font-family: 'Inter', serif;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
+    padding-top: 60px;
+    /* Add padding to prevent content from being hidden under the topbar */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 70px;
-    /* Add padding to prevent content from being hidden under the topbar */
 }
 
-/* Topbar styles */
 #topbar {
     display: flex;
     justify-content: space-between;
@@ -152,143 +150,80 @@ body {
     transform: scale(1.2);
 }
 
-/* Pricing specific styles */
-#pricing-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-    /* Ensure all pricing plans are the same height */
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-    margin-top: 20px;
-    /* Ensure it's spaced well below the topbar */
-}
-
-.pricing-plan {
-    background-color: var(--pricing-plan-bg-color);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 5px;
-    box-shadow: 0px 0px 15px var(--pricing-plan-bg-color);
+.feedback-container {
     text-align: center;
-    width: 30%;
-    transition: transform 0.3s ease;
-    transition: background 1s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 50px;
 }
 
-.pricing-plan:hover {
-    transform: translateY(-10px);
-    background-color: var(--pricing-plan-accent-color);
-    box-shadow: 0px 0px 100px -5px var(--pricing-plan-shadow-color);
-}
-
-.pricing-plan h2 {
-    margin-top: 0;
-}
-
-.pricing-plan h3 {
-    font-size: 2em;
-    margin: 10px 0;
-}
-
-.pricing-plan h3 span {
-    font-size: 0.5em;
-    color: #666;
-}
-
-.pricing-plan button {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-.pricing-plan button:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px var(--primary-color);
-}
-
-.pricing-plan ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    flex-grow: 1;
-    /* Ensure ul takes up remaining space */
-}
-
-.pricing-plan ul li {
-    padding: 5px 0;
-}
-
-/* Marquee */
-#logo-marquee {
-    width: 100%;
+.feedback-slider {
     overflow: hidden;
-    background-color: transparent;
-    padding: 10px 0;
-    position: relative;
 }
 
-.marquee {
+.feedback-wrapper {
     display: flex;
-    align-items: center;
-    overflow: hidden;
-    white-space: nowrap;
+    animation: slide 900s linear infinite; 
 }
 
-.marquee-content {
-    display: inline-block;
-    animation: marquee 180s linear infinite;
-    position: relative;
+.feedback-item {
+    min-width: 300px;
+    margin: 0 20px;
+    padding: 20px;
+    background: var(--pricing-plan-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--pricing-plan-shadow-color);
+    box-sizing: border-box;
 }
 
-@keyframes marquee {
+.feedback-item img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+
+@keyframes slide {
     0% {
         transform: translateX(0%);
     }
-
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
-.marquee-content img {
-    height: 40px;
-    margin: 0 20px;
+.contact-container {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.contact-container h2 {
+    margin-bottom: 10px;
+}
+
+.contact-container p {
+    margin-bottom: 20px;
+}
+
+.contact-container a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-container button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.marquee-content img:hover {
-    transform: scale(1.2);
-}
-
-/* Fading effect */
-#logo-marquee::before,
-#logo-marquee::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50px;
-    z-index: 2;
-}
-
-#logo-marquee::before {
-    left: 0;
-    background: linear-gradient(to right, var(--background-color), transparent);
-}
-
-#logo-marquee::after {
-    right: 0;
-    background: linear-gradient(to left, var(--background-color), transparent);
+.contact-container button:hover {
+    transform: scale(1.1);
+    box-shadow: var(--accent-color) 0px 10px 80px -5px;
 }
